@@ -4,7 +4,8 @@ var path = require('path');
 var errors = require('./components/errors');
  
 module.exports = function (app) {
-	 
+
+  app.use('/api/user', require('./api/user'));
   // All undefined asset routes should return a 404
   app.route('/:url(app|components|bower_components)/*')
      .get(errors[404]);
